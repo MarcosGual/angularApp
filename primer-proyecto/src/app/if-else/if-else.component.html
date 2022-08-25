@@ -1,0 +1,15 @@
+<!-- <p #mensajeBienvenida *ngIf="mostrarBienvenida" ; else mensajeDespedida>
+  Mensaje de Bienvenida
+</p>
+
+<ng-template #mensajeDespedida> Adiós... {{ miInput.value }} </ng-template>
+
+<input #miInput (click)="mostrar(miInput.value)" /> -->
+
+<ng-template [ngIf]="mostrarBienvenida" [ngIfElse]="elseBlock">
+    <h1>Mensaje Bienvenida</h1>
+</ng-template>
+
+<ng-template #elseBlock>
+    Chau, adiós...
+</ng-template>

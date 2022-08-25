@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { IfElseComponent } from './if-else/if-else.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IfElseComponent
   ],
   imports: [
     BrowserModule
