@@ -1,0 +1,24 @@
+<button type="button" class="btn btn-secondary" (click)="agregarPersona()">Nueva Persona</button>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Edad</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of listado; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.apellido}}</td>
+            <td>{{persona.edad}}</td>
+            <td>
+                <button type="button" class="btn-close" aria-label="Close" (click)="eliminarPersona(persona)"></button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
