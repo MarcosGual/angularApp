@@ -1,1 +1,25 @@
-<p>articulo-listado works!</p>
+<table class="table table-dark table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let articulo of articulos">
+      <th scope="row">{{ articulo.codigo }}</th>
+      <td>{{ articulo.nombre }}</td>
+      <td>{{ articulo.precio }}</td>
+      <td>{{ articulo.stock }}</td>
+      <td>
+        <app-articulo-baja
+          (onBajaArticulo)="actualizarListado()"
+          [articulo]="articulo"
+        ></app-articulo-baja>
+      </td>
+    </tr>
+  </tbody>
+</table>

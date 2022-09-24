@@ -11,7 +11,7 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnChanges, OnInit, OnDestroy {
+export class AppComponent implements OnInit {
   title = 'primer-proyecto';
 
   dato: string = '';
@@ -19,22 +19,6 @@ export class AppComponent implements OnChanges, OnInit, OnDestroy {
   constructor() {}
 
   ngOnInit(): void {
-    this.dato = 'hola';
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    throw new Error('Method not implemented.');
-  }
-
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
-  ngOnDestroy(): void {
-    throw new Error('Metod not implemented.');
-  }
-
-  mostrar(valor: string) {
-    alert('Hola, el valor de la variable es: ' + this.title);
+    //this.dato = 'hola';
   }
 }

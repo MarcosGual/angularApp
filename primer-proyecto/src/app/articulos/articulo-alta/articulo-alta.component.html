@@ -1,1 +1,66 @@
-<p>articulo-alta works!</p>
+<form class="g-3 needs-validation" novalidate>
+  <div class="col-md-12">
+    <label for="validationCustom01" class="form-label">Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      id="validationCustom01"
+      placeholder="Leche"
+      required
+    />
+    <div class="valid-feedback">Parece correcto!</div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="validationCustom02" class="form-label">Precio</label>
+      <input
+        type="number"
+        class="form-control"
+        id="validationCustom02"
+        placeholder="150"
+        required
+      />
+      <div class="valid-feedback">Parece correcto!</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="validationCustom02" class="form-label">Stock</label>
+      <input
+        type="number"
+        class="form-control"
+        id="validationCustom02"
+        placeholder="300"
+        required
+      />
+      <div class="valid-feedback">Parece correcto!</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="validationCustom04" class="form-label">Categoría</label>
+      <select class="form-select" id="validationCustom04" required>
+        <option selected disabled value="">Elija...</option>
+        <option *ngFor="let categoria of categorias" [value]="categoria.id">
+            {{categoria.descripcion}}
+          </option>
+      </select>
+      <div class="invalid-feedback">
+        Por favor seleccione una categoría válida.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom05" class="form-label">Código</label>
+      <input
+        type="number"
+        class="form-control"
+        id="validationCustom05"
+        placeholder="1000"
+        required
+      />
+      <div class="invalid-feedback">Por favor provea un código válido.</div>
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Enviar</button>
+  </div>
+</form>

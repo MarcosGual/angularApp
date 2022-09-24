@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { ArticuloAltaComponent } from './articulos/articulo-alta/articulo-alta.component';
 import { ArticuloListadoComponent } from './articulos/articulo-listado/articulo-listado.component';
 import { ArticuloPrincipalComponent } from './articulos/articulo-principal/articulo-principal.component';
+import { ArticuloBajaComponent } from './articulos/articulo-baja/articulo-baja.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { ArticuloPrincipalComponent } from './articulos/articulo-principal/artic
     ArticuloAltaComponent,
     ArticuloListadoComponent,
     ArticuloPrincipalComponent,
+    ArticuloBajaComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,58 @@
+{
+  "articulos": [
+    {
+        "id":1,
+        "codigo": 1001,
+        "nombre": "Leche La Serenísima 1lt Sachet",
+        "precio": 140,
+        "stock": 250,
+        "categoria": 100
+    },
+    {
+        "id":2,
+        "codigo": 1002,
+        "nombre": "Leche La Lácteo 1lt Caja",
+        "precio": 140,
+        "stock": 250,
+        "categoria": 100
+    },
+    {
+        "id":3,
+        "codigo": 1003,
+        "nombre": "Leche extra Proteína LS 1lt",
+        "precio": 140,
+        "stock": 250,
+        "categoria": 100
+    },
+    {
+        "id":4,
+        "codigo": 1004,
+        "nombre": "Colita de cuadril kg",
+        "precio": 1450,
+        "stock": 100,
+        "categoria": 200
+    },
+    {
+        "id":5,
+        "codigo": 1005,
+        "nombre": "Arroz Apóstoles",
+        "precio": 110,
+        "stock": 400,
+        "categoria": 300
+    }
+  ],
+  "categorias": [
+    {
+        "id": 100,
+        "descripcion": "Lácteos"
+    },
+    {
+        "id": 200,
+        "descripcion": "Carnes"
+    },
+    {
+        "id": 300,
+        "descripcion": "Almacén"
+    }
+  ]
+}
