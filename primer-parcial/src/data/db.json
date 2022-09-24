@@ -6,7 +6,7 @@
       "nombre": "Leche La Serenísima 1lt Sachet",
       "precio": 140,
       "stock": 250,
-      "categoria": 100
+      "categoriaId": 100
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "nombre": "Leche La Lácteo 1lt Caja",
       "precio": 140,
       "stock": 250,
-      "categoria": 100
+      "categoriaId": 100
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "nombre": "Leche extra Proteína LS 1lt",
       "precio": 140,
       "stock": 250,
-      "categoria": 100
+      "categoriaId": 100
     },
     {
       "id": 4,
@@ -30,15 +30,24 @@
       "nombre": "Colita de cuadril kg",
       "precio": 1450,
       "stock": 100,
-      "categoria": 200
+      "categoriaId": 200
     },
     {
       "nombre": "Azúcar Ledesma",
       "precio": 120,
       "stock": 350,
-      "categoria": "300",
+      "categoriaId": 300,
       "codigo": 1005,
       "id": 5
+    },
+    {
+      "categoria": {},
+      "categoriaId": 300,
+      "codigo": 1007,
+      "nombre": "Harina Favorita 000",
+      "precio": 110,
+      "stock": 150,
+      "id": 6
     }
   ],
   "categorias": [

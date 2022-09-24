@@ -1,30 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { ArticuloAltaComponent } from './articulos/articulo-alta/articulo-alta.component';
-import { ArticuloListadoComponent } from './articulos/articulo-listado/articulo-listado.component';
-import { ArticuloPrincipalComponent } from './articulos/articulo-principal/articulo-principal.component';
-import { ArticuloBajaComponent } from './articulos/articulo-baja/articulo-baja.component';
 import { HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
+import { ArticuloListadoComponent } from './articulos/articulo-listado/articulo-listado.component';
+import { ArticuloAltaComponent } from './articulos/articulo-alta/articulo-alta.component';
+import { ArticuloBajaComponent } from './articulos/articulo-baja/articulo-baja.component';
+import { AppRoutingModule } from './app-routing.module';
 import { ArticuloModificacionComponent } from './articulos/articulo-modificacion/articulo-modificacion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticuloAltaComponent,
     ArticuloListadoComponent,
-    ArticuloPrincipalComponent,
+    ArticuloAltaComponent,
     ArticuloBajaComponent,
     ArticuloModificacionComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

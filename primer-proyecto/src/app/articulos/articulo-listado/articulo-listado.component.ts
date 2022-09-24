@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ThisReceiver } from '@angular/compiler';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Articulo } from 'src/app/models/articulo';
 import { ArticuloService } from 'src/app/services/articulo.service';
@@ -10,6 +11,8 @@ import { ArticuloService } from 'src/app/services/articulo.service';
 })
 export class ArticuloListadoComponent implements OnInit {
   @Input() articulos: Articulo[];
+  @Output() onModificarArticulo = new EventEmitter<number>();
+  @Output() onAgregarArticulo = new EventEmitter<number>();
 
   subscription = new Subscription();
 
@@ -18,6 +21,10 @@ export class ArticuloListadoComponent implements OnInit {
   ngOnInit(): void {
     this.actualizarListado();
   }
+
+  // ngOnChanges():void{
+  //   this.actualizarListado();
+  // }
 
   actualizarListado() {
     const obtenerSuscripcion = this.articuloService.obtener().subscribe({
@@ -30,5 +37,13 @@ export class ArticuloListadoComponent implements OnInit {
     });
 
     this.subscription.add(obtenerSuscripcion);
+  }
+
+  modificarArticulo(articulo: Articulo) {
+    this.onModificarArticulo.emit(articulo.id);
+  }
+
+  agregarArticulo(){
+    this.onAgregarArticulo.emit();
   }
 }

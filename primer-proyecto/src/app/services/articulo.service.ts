@@ -23,4 +23,18 @@ export class ArticuloService {
   eliminar(codigo: Number) {
     return this.http.delete(`http://localhost:3000/articulos/${codigo}`);
   }
+
+  guardar(articulo: Articulo) {
+    return this.http.post('http://localhost:3000/articulos', articulo);
+  }
+
+  obtenerxCodigo(id: number): Articulo {
+    const index = this.articulos.findIndex((x) => x.id === id);
+    return this.articulos[index];
+  }
+
+  modificar(articulo: Articulo) {
+    const index = this.articulos.findIndex((x) => x === articulo);
+    this.articulos.fill(articulo, index, index + 1);
+  }
 }
