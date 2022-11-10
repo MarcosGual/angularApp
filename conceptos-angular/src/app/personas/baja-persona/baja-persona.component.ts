@@ -12,6 +12,6 @@ export class BajaPersonaComponent implements OnInit {
   ngOnInit(): void {}
 
   eliminar(): void {
-    this.estadoPersonaService.cambiarEstado(true);
+    this.estadoPersonaService.cambiarEstado('BAJA');
   }
 }

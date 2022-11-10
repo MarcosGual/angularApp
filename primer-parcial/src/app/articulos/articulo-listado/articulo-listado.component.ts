@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Subscription } from 'rxjs';
+import { mergeMap, Observable, Subscription } from 'rxjs';
 
 import { Articulo } from 'src/app/models/articulo';
 import { Categoria } from 'src/app/models/categoria';
@@ -15,6 +15,9 @@ import { CategoriaService } from 'src/app/services/categoria.service';
 })
 export class ArticuloListadoComponent implements OnInit, OnDestroy {
   listado: Articulo[];
+  $listado: Observable<Articulo[]>;
+  $categorias: Observable<Categoria[]>;
+  $claseCantidades: string;
 
   private subscription = new Subscription();
 
@@ -33,27 +36,30 @@ export class ArticuloListadoComponent implements OnInit, OnDestroy {
   }
 
   actualizarListado() {
-    this.subscription.add(
-      this.categoriaService.obtener().subscribe({
-        next: (categorias: Categoria[]) => {
-          this.articuloService.obtener().subscribe({
-            next: (respuesta: Articulo[]) => {
-              for (const articulo of respuesta) {
-                const categoriaIndex = categorias.findIndex(
-                  (x) => x.id === articulo.categoriaId
-                );
-                articulo.categoria = categorias[categoriaIndex];
-              }
+    this.$listado = this.articuloService.obtener();
+    this.$categorias = this.categoriaService.obtener();
 
-              this.listado = respuesta;
-            },
-            error: () => {
-              alert('error al comunicarse con la API');
-            },
-          });
-        },
-      })
-    );
+    //   this.subscription.add(
+    //     this.categoriaService.obtener().subscribe({
+    //       next: (categorias: Categoria[]) => {
+    //         this.articuloService.obtener().subscribe({
+    //           next: (respuesta: Articulo[]) => {
+    //             for (const articulo of respuesta) {
+    //               const categoriaIndex = categorias.findIndex(
+    //                 (x) => x.id === articulo.categoriaId
+    //               );
+    //               articulo.categoria = categorias[categoriaIndex];
+    //             }
+
+    //             this.listado = respuesta;
+    //           },
+    //           error: () => {
+    //             alert('error al comunicarse con la API');
+    //           },
+    //         });
+    //       },
+    //     })
+    //   );
   }
 
   nuevoArticulo() {

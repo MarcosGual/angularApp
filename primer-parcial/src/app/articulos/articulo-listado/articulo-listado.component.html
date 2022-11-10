@@ -1,33 +1,66 @@
 <h1 class="display-3 mt-3">Lista de Productos</h1>
-<table class="table table-dark table-hover mt-3">
+
+<ng-container *ngIf="($listado | async)?.length">
+  <table class="table table-dark table-hover mt-3">
     <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Código</th>
-            <th scope="col">Descripción</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Stock</th>
-            <th scope="col">Categoría</th>
-            <th scope="col">Acciones</th>
-        </tr>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Código</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Categoría</th>
+        <th scope="col">Acciones</th>
+      </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let articulo of listado">
-            <th scope="row">{{ articulo.id }}</th>
-            <th scope="row">{{ articulo.codigo }}</th>
-            <td>{{ articulo.nombre }}</td>
-            <td>{{ articulo.precio }}</td>
-            <td>{{ articulo.stock }}</td>
-            <td>{{ articulo.categoria?.descripcion }}</td>
-            <td>
-                <i class="bi bi-pencil-square" (click)="actualizarArticulo(articulo.id)"></i>
-                <app-articulo-baja [id]="articulo.id" (onEliminar)="actualizarListado()">
-                </app-articulo-baja>
-            </td>
-        </tr>
+      <tr *ngFor="let articulo of $listado | async">
+        <th scope="row">{{ articulo.id }}</th>
+        <th scope="row">{{ articulo.codigo }}</th>
+        <td>{{ articulo.nombre }}</td>
+        <td>{{ articulo.precio }}</td>
+        <td>{{ articulo.precio | esMayor: 200 }}</td>
+        <td>{{ articulo.stock }}</td>
+        <td>{{ articulo.categoria?.descripcion }}</td>
+        <td>
+          <i
+            class="bi bi-pencil-square"
+            (click)="actualizarArticulo(articulo.id)"
+          ></i>
+          <app-articulo-baja appValidarPermiso [permiso]="'admin'"
+            [id]="articulo.id"
+            (onEliminar)="actualizarListado()"
+          >
+          </app-articulo-baja>
+        </td>
+      </tr>
     </tbody>
-</table>
+  </table>
+</ng-container>
+
+<ng-container *ngIf="($listado | async)?.length">
+  <h5 class="d-flex justify-content-center">
+    Cantidad de resultados:
+    {{ ($listado | async)?.length }}
+  </h5>
+</ng-container>
+
+<!-- <app-select-proyeccion>
+  <select class="form-select" name="precio" id="">
+    <option selected>Seleccione...</option>
+    <option value="Caro">Caro</option>
+    <option value="Barato">Barato</option>
+  </select>
+
+  <label for="" class="form-label"></label>
+  <input segundaSeccion type="text" class="form-control">
+</app-select-proyeccion> -->
+
+<p cambiarColor>Directiva Cambiar Color</p>
 
 <div class="d-flex justify-content-center mt-5">
-    <button type="button" class="btn btn-lg btn-dark" (click)="nuevoArticulo()">Nuevo</button>
+  <button type="button" class="btn btn-lg btn-dark" (click)="nuevoArticulo()">
+    Nuevo
+  </button>
 </div>

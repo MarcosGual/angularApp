@@ -1,28 +1,27 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
-import { ArticuloAltaComponent } from './articulos/articulo-alta/articulo-alta.component';
-import { ArticuloListadoComponent } from './articulos/articulo-listado/articulo-listado.component';
-import { ArticuloPrincipalComponent } from './articulos/articulo-principal/articulo-principal.component';
-import { ArticuloBajaComponent } from './articulos/articulo-baja/articulo-baja.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ArticuloModificacionComponent } from './articulos/articulo-modificacion/articulo-modificacion.component';
+import { PersonaAltaComponent } from './personas/persona-alta/persona-alta.component';
+import { PersonaBajaComponent } from './personas/persona-baja/persona-baja.component';
+import { PersonaListadoComponent } from './personas/persona-listado/persona-listado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticuloAltaComponent,
-    ArticuloListadoComponent,
-    ArticuloPrincipalComponent,
-    ArticuloBajaComponent,
-    ArticuloModificacionComponent,
+    PersonaAltaComponent,
+    PersonaBajaComponent,
+    PersonaListadoComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

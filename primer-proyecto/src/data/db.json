@@ -1,58 +1,122 @@
 {
-  "articulos": [
-    {
-      "id": 1,
-      "codigo": 1001,
-      "nombre": "Leche La Serenísima 1lt Sachet",
-      "precio": 140,
-      "stock": 250,
-      "categoria": 100
-    },
-    {
-      "id": 2,
-      "codigo": 1002,
-      "nombre": "Leche La Lácteo 1lt Caja",
-      "precio": 140,
-      "stock": 250,
-      "categoria": 100
-    },
-    {
-      "id": 3,
-      "codigo": 1003,
-      "nombre": "Leche extra Proteína LS 1lt",
-      "precio": 140,
-      "stock": 250,
-      "categoria": 100
-    },
-    {
-      "id": 4,
-      "codigo": 1004,
-      "nombre": "Colita de cuadril kg",
-      "precio": 1450,
-      "stock": 100,
-      "categoria": 200
-    },
-    {
-      "nombre": "Azúcar Ledesma",
-      "precio": 120,
-      "stock": 350,
-      "categoria": "300",
-      "codigo": 1005,
-      "id": 5
-    }
-  ],
-  "categorias": [
-    {
-      "id": 100,
-      "descripcion": "Lácteos"
-    },
-    {
-      "id": 200,
-      "descripcion": "Carnes"
-    },
-    {
-      "id": 300,
-      "descripcion": "Almacén"
-    }
-  ]
+    "persona": [
+        {
+            "id": 1,
+            "nombre": "Marcos",
+            "apellido": "Gual",
+            "edad": 35,
+            "paisId": 1
+        },
+        {
+            "id": 2,
+            "nombre": "Antonella",
+            "apellido": "Abbattista",
+            "edad": 30,
+            "paisId": 1
+        },
+        {
+            "id": 3,
+            "nombre": "Santiago",
+            "apellido": "Maldonado",
+            "edad": 35,
+            "paisId": 3
+        },
+        {
+            "nombre": "Maria",
+            "apellido": "Romeri",
+            "edad": 65,
+            "paisId": 3,
+            "id": 4
+        },
+        {
+            "nombre": "Leonardo",
+            "apellido": "Gual",
+            "edad": 65,
+            "paisId": "4",
+            "id": 5
+        },
+        {
+            "nombre": "Carlitos",
+            "apellido": "Balá",
+            "edad": 100,
+            "paisId": "1",
+            "id": 6
+        },
+        {
+            "nombre": "sadas",
+            "apellido": "sdasd",
+            "edad": 21,
+            "paisId": "3",
+            "id": 7
+        },
+        {
+            "nombre": "dasda",
+            "apellido": "dasdas",
+            "edad": 2,
+            "paisId": "2",
+            "id": 8
+        },
+        {
+            "nombre": "sadas",
+            "apellido": "dada",
+            "edad": 242,
+            "paisId": 2,
+            "id": 9
+        }
+    ],
+    "pais": [
+        {
+            "id": 1,
+            "nombre": "Argentina"
+        },
+        {
+            "id": 2,
+            "nombre": "Brasil"
+        },
+        {
+            "id": 3,
+            "nombre": "Chile"
+        },
+        {
+            "id": 4,
+            "nombre": "Uruguay"
+        }
+    ],
+    "ciudad": [
+        {
+            "id": 1,
+            "nombre": "Cordoba",
+            "paisId": "1"
+        },
+        {
+            "id": 2,
+            "nombre": "Buenos Aires",
+            "paisId": "1"
+        },
+        {
+            "id": 3,
+            "nombre": "Rosario",
+            "paisId": "1"
+        },
+        {
+            "id": 4,
+            "nombre": "Curitiba",
+            "paisId": "2"
+        },
+        {
+            "id": 5,
+            "nombre": "Rio de Janeiro",
+            "paisId": "2"
+        },
+        {
+            "id": 6,
+            "nombre": "Santiago",
+            "paisId": "3"
+        },
+        {
+            "id": 7,
+            "nombre": "Montevideo",
+            "paisId": "4"
+        }
+    ]
 }

@@ -1,4 +1,12 @@
 .bi {
-    cursor: pointer;
-    margin: 0 8px;
+  cursor: pointer;
+  margin: 0 8px;
+}
+
+.rojo {
+  color: brown;
+}
+
+.verde {
+  color: green;
 }

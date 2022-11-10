@@ -48,6 +48,15 @@
       "precio": 110,
       "stock": 150,
       "id": 6
+    },
+    {
+      "categoria": {},
+      "codigo": 1000,
+      "nombre": "Lata de arvejas",
+      "categoriaId": 300,
+      "id": 7,
+      "precio": 150,
+      "stock": 100
     }
   ],
   "categorias": [
@@ -62,6 +71,16 @@
     {
       "id": 300,
       "descripcion": "Almacén"
+    }
+  ],
+  "permisos": [
+    {
+      "id": 1,
+      "descripcion": "admin"
+    },
+    {
+      "id":2,
+      "descripcion": "user"
     }
   ]
 }

@@ -10,6 +10,10 @@ import { ArticuloAltaComponent } from './articulos/articulo-alta/articulo-alta.c
 import { ArticuloBajaComponent } from './articulos/articulo-baja/articulo-baja.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ArticuloModificacionComponent } from './articulos/articulo-modificacion/articulo-modificacion.component';
+import { EsMayorPipe } from './pipes/es-mayor.pipe';
+import { SelectProyeccionComponent } from './select-proyeccion/select-proyeccion.component';
+import { CambiarColorDirective } from './directives/cambiar-color.directive';
+import { ValidarPermisoDirective } from './directives/validar-permiso.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,10 @@ import { ArticuloModificacionComponent } from './articulos/articulo-modificacion
     ArticuloAltaComponent,
     ArticuloBajaComponent,
     ArticuloModificacionComponent,
+    EsMayorPipe,
+    SelectProyeccionComponent,
+    CambiarColorDirective,
+    ValidarPermisoDirective
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],

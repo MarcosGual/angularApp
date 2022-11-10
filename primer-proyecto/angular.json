@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "primer-proyecto": {
+    "modelo-repaso": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/primer-proyecto",
+            "outputPath": "dist/modelo-repaso",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "primer-proyecto:build:production"
+              "browserTarget": "modelo-repaso:build:production"
             },
             "development": {
-              "browserTarget": "primer-proyecto:build:development"
+              "browserTarget": "modelo-repaso:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "primer-proyecto:build"
+            "browserTarget": "modelo-repaso:build"
           }
         },
         "test": {
